@@ -1,0 +1,37 @@
+<definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:activiti="http://activiti.org/bpmn" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:omgdc="http://www.omg.org/spec/DD/20100524/DC" xmlns:omgdi="http://www.omg.org/spec/DD/20100524/DI" typeLanguage="http://www.w3.org/2001/XMLSchema" expressionLanguage="http://www.w3.org/1999/XPath" targetNamespace="9be9cf72287f48f980a9aa93778f2767">
+    <process id="test" name="test_1" isExecutable="true">
+        <documentation>测试流程</documentation>
+        <startEvent id="start" name="发起申请"/>
+        <userTask id="ask1" name="部门主管审批" activiti:assignee="superadmin">
+            <documentation>进行审批</documentation>
+        </userTask>
+        <endEvent id="end" name="结束审批"/>
+        <sequenceFlow id="sid-B812EDE5-3C6C-4C25-A108-0A8A2ECF4651" sourceRef="ask1" targetRef="end"/>
+        <sequenceFlow id="sid-1CFA1892-621E-4207-847A-7168A46A7145" sourceRef="start" targetRef="ask1">
+            <documentation>发起审批</documentation>
+        </sequenceFlow>
+    </process>
+    <bpmndi:BPMNDiagram id="BPMNDiagram_test">
+        <bpmndi:BPMNPlane bpmnElement="test" id="BPMNPlane_test">
+            <bpmndi:BPMNShape bpmnElement="start" id="BPMNShape_start">
+                <omgdc:Bounds height="30.0" width="30.0" x="192.75" y="401.0"/>
+            </bpmndi:BPMNShape>
+            <bpmndi:BPMNShape bpmnElement="ask1" id="BPMNShape_ask1">
+                <omgdc:Bounds height="80.0" width="100.0" x="420.0" y="375.0"/>
+            </bpmndi:BPMNShape>
+            <bpmndi:BPMNShape bpmnElement="end" id="BPMNShape_end">
+                <omgdc:Bounds height="28.0" width="28.0" x="731.75" y="401.0"/>
+            </bpmndi:BPMNShape>
+            <bpmndi:BPMNEdge bpmnElement="sid-B812EDE5-3C6C-4C25-A108-0A8A2ECF4651" id="BPMNEdge_sid-B812EDE5-3C6C-4C25-A108-0A8A2ECF4651">
+                <omgdi:waypoint x="520.0" y="415.0"/>
+                <omgdi:waypoint x="731.75" y="415.0"/>
+            </bpmndi:BPMNEdge>
+            <bpmndi:BPMNEdge bpmnElement="sid-1CFA1892-621E-4207-847A-7168A46A7145" id="BPMNEdge_sid-1CFA1892-621E-4207-847A-7168A46A7145">
+                <omgdi:waypoint x="222.75" y="416.0"/>
+                <omgdi:waypoint x="321.375" y="416.0"/>
+                <omgdi:waypoint x="321.375" y="415.0"/>
+                <omgdi:waypoint x="420.0" y="415.0"/>
+            </bpmndi:BPMNEdge>
+        </bpmndi:BPMNPlane>
+    </bpmndi:BPMNDiagram>
+</definitions>

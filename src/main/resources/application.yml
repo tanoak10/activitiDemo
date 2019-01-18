@@ -1,0 +1,21 @@
+server:
+  port: 8084
+  tomcat:
+    uri-encoding: utf-8
+spring:
+  datasource:
+  #端口号更改了
+    url: jdbc:mysql://127.0.0.1:3308/act?useUnicode=true&characterEncoding=UTF-8
+#    url: jdbc:mysql://172.81.241.157:3306/act?useUnicode=true&characterEncoding=UTF-8
+    username: root
+    password: 更换成自己的数据库地址
+    driver-class-name: com.mysql.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
+  jpa:
+    database: mysql
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+  activiti:
+    check-process-definitions: false
+    process-definition-location-prefix: classpath:/processes/
